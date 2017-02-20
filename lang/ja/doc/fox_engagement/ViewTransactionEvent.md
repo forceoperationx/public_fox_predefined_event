@@ -12,7 +12,7 @@ Track Transaction（商品購入）イベントが発生する箇所に、下記
                               sku:nil
                               itemName:nil
                               price:2750
-                              quantity:6
+                              quantity:1
                               currency: @"JPY"
                               eventInfo: @{
                                   @"transaction_id":@"ABC",
