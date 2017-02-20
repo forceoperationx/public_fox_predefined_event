@@ -51,4 +51,5 @@
 |eventInfo (criteo_partner_id)|NSDictionary|Criteo アカウントID が同⼀アプリで異なる場合は⼊⼒(任意)|
 
 ---　
+
 [戻る](/lang/ja/doc/fox_engagement/README.md)
