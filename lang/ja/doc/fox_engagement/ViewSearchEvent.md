@@ -1,5 +1,5 @@
-#	View Home(アプリトップ訪問イベント)実装方法
-　View Home（ホーム画面）イベントが発生する箇所に、下記に従ってアクセス解析のイベント計測機能を実装ください。
+#	View Search(アプリ内検索イベント)実装方法
+　View Search（検索画面）イベントが発生する箇所に、下記に従ってアクセス解析のイベント計測機能を実装ください。
 
 ### 実装例
 
@@ -9,7 +9,8 @@
 								label:nil
 								value:0　
 								eventInfo:@{
-									@"product":@[{@"id": @"111"}],
+									@"search_term":@"XXXXX",
+									@"product":@[{@"id": @"111", @"item_location_id":"XXXXX"}],
 									@"din":@"2016-01-02",
 									@"dout":@"2016-01-05",
 									@"origin":@"XXXXX",
@@ -35,7 +36,8 @@
 | 引数 | 型 | 概要 |
 |:----------|:-----------:|:------------|
 |eventInfo (product)|NSDictionary|Product をキーとして商品IDを配列で設定します。
-|&nbsp;&nbsp;eventInfo (product[].id)|NSDictionary|検索した商品IDを設定します。|
+|&nbsp;&nbsp;eventInfo (product[].id)|NSDictionary|検索された商品IDを設定します。|
+|&nbsp;&nbsp;eventInfo (product[].item_location_id)|NSDictionary|商品の広告を特定の場所や地域に訴求したい場合指定（任意）|
 |eventInfo (din/dout)|NSDictionary|日付の指定がある場合は入力（任意）|
 |eventInfo (origin/destination)|NSDictionary|出発地点／行先の指定がある場合は入力（旅行アプリなど）（任意）|
 |eventInfo (criteo_partner_id)|NSDictionary|CriteoアカウントIDが同一アプリで異なる場合は入力(任意)|

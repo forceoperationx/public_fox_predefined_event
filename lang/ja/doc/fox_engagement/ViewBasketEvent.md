@@ -42,7 +42,6 @@
 | 引数 | 型 | 概要 |
 |:----------|:-----------:|:------------|
 |eventInfo (currency)|NSDictionary|通貨<br>Nil/nilの場合、デフォルト “JPY”|
-|eventInfo (fox_cvpoint)|NSDictionary|F.O.Xの成果地点IDを設定します。|
 |eventInfo (product)|JSONArray|Product をキーとして商品IDを配列で設定します。
 |&nbsp;&nbsp;eventInfo (product[].id)|NSDictionary|商品ID|
 |&nbsp;&nbsp;eventInfo (product[].price)|NSDictionary|該当商品の価格を設定します。|
