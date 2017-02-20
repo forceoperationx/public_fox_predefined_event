@@ -41,7 +41,7 @@
 |eventInfo (product)|NSDictionary|Product をキーとして商品IDを配列で設定します。
 |&nbsp;&nbsp;eventInfo (product[].id)|NSDictionary|商品IDを設定します。<br>データフィードと同じ商品IDを使⽤してください。|
 |&nbsp;&nbsp;eventInfo (product[].category)|NSDictionary|商品カテゴリを設定します。<br>データフィードと同じ商品カテゴリを使用してください。<br>１商品に対して複数カテゴリある場合はカンマ「,」区切り、階層がある場合は「>」で分割します。<br>例）映画、ビデオ>DVD>スポーツ、レジャー<br>※ nilでも構いません。|
-|eventInfo (origin/destination)|NSDictionary|出発時点／行先の指定がある場合は入力（旅行アプリなど）（任意）|
+|eventInfo (origin/destination)|NSDictionary|出発地点／行先の指定がある場合は入力（旅行アプリなど）（任意）|
 |eventInfo (din/dout)|NSDictionary|⽇付の指定がある場合は⼊⼒してください。（任意）|
 |eventInfo (criteo_partner_id)|NSDictionary|Criteo アカウントID が同⼀アプリで異なる場合は⼊⼒(任意)|
 

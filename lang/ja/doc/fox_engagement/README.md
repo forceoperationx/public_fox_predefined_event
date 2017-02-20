@@ -60,13 +60,16 @@ Jsonの仕様は以下の通りです。
 |&nbsp;&nbsp;product[].category|String|閲覧した、カートに入れた等の商品カテゴリを指定します。<br>複数ある場合はカンマ「,」区切り、階層がある場合は「>」で分割します。<br>例）映画、ビデオ>DVD>スポーツ、レジャー|
 |din|String|開始日の指定がある場合に設定します。|
 |dout|String|終了日の指定がある場合に指定します。|
+|origin|String|出発地点指定がある場合に設定します。|
+|destination|String|行先の指定がある場合に指定します。|
 |criteo_partner_id|String|CriteoアカウントIDが同一アプリで異なる場合に設定します。|
 
 　　　
 ## 2.イベント計測の実装
-F.O.X SDKで対応しているF.O.XエンゲージメントおよびCriteoのイベント計測は以下の５つとなっています。
+F.O.X SDKで対応している媒体のイベント計測は以下の6つとなっています。
 
 * [> View Toppage イベント](./ViewToppageEvent.md)
+* [> View Search イベント](./ViewSearchEvent.md)
 * [> View Listing イベント](./ViewListingEvent.md)
 * [> View Product イベント](./ViewProductEvent.md)
 * [> View Basket イベント](./ViewBasketEvent.md)

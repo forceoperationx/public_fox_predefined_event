@@ -34,7 +34,7 @@
 | 引数 | 型 | 概要 |
 |:----------|:-----------:|:------------|
 |eventInfo (din/dout)|NSDictionary|日付の指定がある場合は入力（任意）|
-|eventInfo (origin/destination)|NSDictionary|出発時点／行先の指定がある場合は入力（旅行アプリなど）（任意）|
+|eventInfo (origin/destination)|NSDictionary|出発地点／行先の指定がある場合は入力（旅行アプリなど）（任意）|
 |eventInfo (criteo_partner_id)|NSDictionary|CriteoアカウントIDが同一アプリで異なる場合は入力(任意)|
 
 ---
