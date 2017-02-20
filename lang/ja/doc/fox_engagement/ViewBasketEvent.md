@@ -11,7 +11,6 @@
                                   value: 0
                                   eventInfo:@{
                                     @"currency":@"JPY",
-                                    @"fox_cvpoint":12346,
                                     @"product":@[
                                       {@"id ":@"1234",@"price":@100,@"quantity":@1},
                                       {@"id ":@"1235",@"price":@200,@"quantity":@2},
