@@ -25,7 +25,7 @@ Track Transaction（商品購入）イベントが発生する箇所に、下記
                                   @"dout":@"2016-01-05",
                                   @"origin":@"XXXXX",
                                   @"destination":@"XXXXX",
-                                  @"criteo_partner_id":@"XXXXX",
+                                  @"criteo_partner_id":@"XXXXX"
                               }
 ];
 ```
