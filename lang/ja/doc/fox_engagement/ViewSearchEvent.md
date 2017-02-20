@@ -10,7 +10,7 @@
 								value:0　
 								eventInfo:@{
 									@"search_term":@"XXXXX",
-									@"product":@[{@"id": @"111", @"item_location_id":"XXXXX"}],
+									@"product":@[{@"id": @"111", @"item_location_id":@"XXXXX"}],
 									@"din":@"2016-01-02",
 									@"dout":@"2016-01-05",
 									@"origin":@"XXXXX",
@@ -24,7 +24,7 @@
 
 | 引数 | 型 | 概要 |
 |:----------|:-----------:|:------------|
-|eventName|NSString|“\_view\_toppage”を指定してください。|
+|eventName|NSString|“\_search”を指定してください。|
 |<span style="color:grey">action|<span style="color:grey">NSString|<span style="color:grey">使用しません。|
 |<span style="color:grey">label|<span style="color:grey">NSString|<span style="color:grey">使用しません。|
 |<span style="color:grey">value|<span style="color:grey">NSUInteger|<span style="color:grey">使用しません。|
@@ -38,6 +38,7 @@
 |eventInfo (product)|NSDictionary|Product をキーとして商品IDを配列で設定します。
 |&nbsp;&nbsp;eventInfo (product[].id)|NSDictionary|検索された商品IDを設定します。|
 |&nbsp;&nbsp;eventInfo (product[].item_location_id)|NSDictionary|商品の広告を特定の場所や地域に訴求したい場合指定（任意）|
+|eventInfo (search_term)|NSDictionary|検索キーワードを入力|
 |eventInfo (din/dout)|NSDictionary|日付の指定がある場合は入力（任意）|
 |eventInfo (origin/destination)|NSDictionary|出発地点／行先の指定がある場合は入力（旅行アプリなど）（任意）|
 |eventInfo (criteo_partner_id)|NSDictionary|CriteoアカウントIDが同一アプリで異なる場合は入力(任意)|
