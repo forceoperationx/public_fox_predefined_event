@@ -46,7 +46,7 @@
 |&nbsp;&nbsp;eventInfo (product[].price)|NSDictionary|該当商品の価格を設定します。|
 |&nbsp;&nbsp;eventInfo (product[].quantity)|NSDictionary|該当商品を買った個数を設定します。|
 |eventInfo (din/dout)|NSDictionary|⽇付の指定がある場合は⼊⼒してください。（任意）|
-|eventInfo (origin/destination)|NSDictionary|出発地点／行先の指定がある場合は入力（旅行アプリなど）（任意）|
+|eventInfo (origin/destination)|NSDictionary|出発地点／行先の指定がある場合は入力（旅行アプリなど） </br>（任意）|
 |eventInfo (criteo_partner_id)|NSDictionary|Criteo アカウントID が同⼀アプリで異なる場合は⼊⼒(任意)|
 
 ---　
