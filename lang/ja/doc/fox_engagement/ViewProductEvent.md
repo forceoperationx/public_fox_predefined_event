@@ -5,41 +5,40 @@
 ### 実装例
 
 ```java
-[ForceAnalyticsManager sendEvent:@"_view_content"
-                                action: nil
-                                label: nil
-                                value: 0
-                                eventInfo:@{
-                                  @"product":@[{@"id": @"111"}],
-                                  @"din":@"2016-01-02",
-                                  @"dout":@"2016-01-05",
-                                  @"origin":@"XXXXX",
-                                  @"destination":@"XXXXX",
-                                  @"criteo_partner_id":@"XXXXX"
-                                }
-];
+JSONObject eventInfo = new JSONObject("{" +
+                                 "'product':[{'id': '111'}]," +
+                                 "'din':'2016-01-02'," +
+                                 "'dout':'2016-01-05'," +
+                                 "'origin':'XXXXX'," +
+                                 "'destination':'XXXXX'," +
+                                 "'criteo_partner_id':'XXXXX'" +
+                                 "}");
+AnalyticsManager.sendEvent(this, "_view_content", null, null, 0, eventInfo);
 ```
 
 ### 引数詳細
 
 | 引数 | 型 | 概要 |
 |:----------|:-----------:|:------------|
-|eventName|NSString|"\_view\_content" を指定してください。|
-|<span style="color:grey">action|<span style="color:grey">NSString|<span style="color:grey">使用しません。|
-|<span style="color:grey">label|<span style="color:grey">NSString|<span style="color:grey">使用しません。|
-|<span style="color:grey">value|<span style="color:grey">NSUInteger|<span style="color:grey">使用しません。|
-|eventInfo|NSDictionary|イベント情報詳細 (以下参照)|
+|context|Context|呼び出し元のActivityのContext|
+|eventName|String|"\_view\_content" を指定してください。|
+|<span style="color:grey">action|<span style="color:grey">String|<span style="color:grey">使用しません。|
+|<span style="color:grey">label|<span style="color:grey">String|<span style="color:grey">使用しません。|
+|<span style="color:grey">value|<span style="color:grey">int|<span style="color:grey">使用しません。|
+|eventInfo|JSONObject|イベント情報詳細 (以下参照)|
 
 #### イベント情報詳細
 
 | 引数 | 型 | 概要 |
 |:----------|:-----------:|:------------|
-|eventInfo (product)|NSDictionary|Product をキーとして商品IDを配列で設定します。
-|&nbsp;&nbsp;eventInfo (product[].id)|NSDictionary|閲覧した商品IDを設定します。|
-|eventInfo (din/dout)|NSDictionary|⽇付の指定がある場合は⼊⼒してください。（任意）|
-|eventInfo (origin/destination)|NSDictionary|出発地点／行先の指定がある場合は入力（旅行アプリなど）（任意）|
-|eventInfo (criteo_partner_id)|NSDictionary|Criteo アカウントID が同⼀アプリで異なる場合は⼊⼒(任意)|
+|eventInfo (product)|JSONArray|Product をキーとして商品IDを配列で設定します。
+|&nbsp;&nbsp;eventInfo (product[].id)|JSONObject|閲覧した商品IDを設定します。|
+|eventInfo (din/dout)|JSONObject|⽇付の指定がある場合は⼊⼒してください。（任意）|
+|eventInfo (origin/destination)|JSONObject|出発地点／行先の指定がある場合は入力（旅行アプリなど）</br>（任意）|
+|eventInfo (criteo_partner_id)|JSONObject|Criteo アカウントID が同⼀アプリで異なる場合は⼊⼒(任意)|
+　　
 
 ---
-[戻る](/lang/ja/doc/fox_engagement/README.md)
+[戻る](/lang/ja//doc/fox_engagement/README.md)
 
+[トップ](/lang/ja/README.md)

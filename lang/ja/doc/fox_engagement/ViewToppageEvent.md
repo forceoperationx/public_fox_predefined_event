@@ -3,40 +3,38 @@
 
 ### 実装例
 
-```objective-c
-[ForceAnalyticsManager sendEvent:@"_view_toppage"
-								action:nil
-								label:nil
-								value:0　
-								eventInfo:@{
-									@"din":@"2016-01-02",
-									@"dout":@"2016-01-05",
-									@"origin":@"XXXXX",
-									@"destination":@"XXXXX",
-									@"criteo_partner_id":@"XXXXX"
-								}
-];
+```java
+JSONObject eventInfo = new JSONObject("{" +
+                                 "'din':'2016-01-02'," +
+                                 "'dout':'2016-01-05'," +
+                                 "'origin':'XXXXX'," +
+                                 "'destination':'XXXXX'," +
+                                 "'criteo_partner_id':'XXXXX'" +
+                                 "}");
+AnalyticsManager.sendEvent(this, "_view_toppage", null, null, 0, eventInfo);
 ```
 
 ### 引数詳細
 
 | 引数 | 型 | 概要 |
 |:----------|:-----------:|:------------|
-|eventName|NSString|“\_view\_toppage”を指定してください。|
-|<span style="color:grey">action|<span style="color:grey">NSString|<span style="color:grey">使用しません。|
-|<span style="color:grey">label|<span style="color:grey">NSString|<span style="color:grey">使用しません。|
-|<span style="color:grey">value|<span style="color:grey">NSUInteger|<span style="color:grey">使用しません。|
-|eventInfo|NSDictionary|イベント情報詳細 (以下参照)|
+|context|Context|呼び出し元のActivityのContext|
+|eventName|String|“\_view\_toppage”を指定してください。|
+|<span style="color:grey">action|<span style="color:grey">String|<span style="color:grey">使用しません。|
+|<span style="color:grey">label|<span style="color:grey">String|<span style="color:grey">使用しません。|
+|<span style="color:grey">value|<span style="color:grey">int|<span style="color:grey">使用しません。|
+|eventInfo|JSONObject|イベント情報詳細 (以下参照)|
 
 
 #### イベント情報詳細
 
 | 引数 | 型 | 概要 |
 |:----------|:-----------:|:------------|
-|eventInfo (din/dout)|NSDictionary|日付の指定がある場合は入力（任意）|
-|eventInfo (origin/destination)|NSDictionary|出発地点／行先の指定がある場合は入力（旅行アプリなど）（任意）|
-|eventInfo (criteo_partner_id)|NSDictionary|CriteoアカウントIDが同一アプリで異なる場合は入力(任意)|
+|eventInfo (din/dout)|JSONObject|日付の指定がある場合は入力（任意）|
+|eventInfo (origin/destination)|JSONObject|出発地点／行先の指定がある場合は入力（旅行アプリなど）</br>（任意）|
+|eventInfo (criteo_partner_id)|JSONObject|CriteoアカウントIDが同一アプリで異なる場合は入力(任意)|
 
 ---
-[戻る](/lang/ja/doc/fox_engagement/README.md)
+[戻る](/lang/ja//doc/fox_engagement/README.md)
 
+[トップ](/lang/ja/README.md)

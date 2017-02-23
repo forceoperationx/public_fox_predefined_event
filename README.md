@@ -1,4 +1,4 @@
-# Force Operation X iOS SDK Predefined Events Integration Guide
+# Force Operation X Android SDK Predefined Events Integration Guide
 
 ### LANGUAGE
 * [English](./lang/en/doc/fox_engagement/README.md)
