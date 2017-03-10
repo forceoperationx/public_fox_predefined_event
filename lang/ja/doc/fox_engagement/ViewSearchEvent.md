@@ -1,5 +1,5 @@
-#	View Home(アプリトップ訪問イベント)実装方法
-　View Home（ホーム画面）イベントが発生する箇所に、下記に従ってアクセス解析のイベント計測機能を実装ください。
+#	View Search(アプリ内検索イベント)実装方法
+　View Search（検索）イベントが発生する箇所に、下記に従ってアクセス解析のイベント計測機能を実装ください。
 
 ### 実装例
 
@@ -40,7 +40,7 @@ AnalyticsManager.sendEvent(this, "_search", null, null, 0, eventInfo);
 | 引数 | 型 | 概要 |
 |:----------|:-----------:|:------------|
 |eventInfo (product)|JSONArray|Product をキーとして商品IDを配列で設定します。
-|&nbsp;&nbsp;eventInfo (product[].id)|JSONObject|商品IDを設定します。<br>データフィードと同じ商品IDを使⽤してください。|
+|&nbsp;&nbsp;eventInfo (product[].id)|JSONObject|商品IDを設定します。|
 |&nbsp;&nbsp;eventInfo (product[].item_location_id)|JSONObject|商品の広告を特定の場所や地域に訴求したい場合指定（任意）|
 |eventInfo (search_term)|JSONObject|検索キーワードを入力|
 |eventInfo (din/dout)|JSONObject|日付の指定がある場合は入力（任意）|
