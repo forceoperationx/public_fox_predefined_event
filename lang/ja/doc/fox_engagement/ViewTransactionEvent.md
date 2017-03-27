@@ -17,9 +17,9 @@ Track Transaction（商品購入）イベントが発生する箇所に、下記
                               eventInfo: @{
                                   @"transaction_id":@"ABC",
                                   @"product":@[
-                                      {@"id ":@"1234",@"price":550,@"quantity":@1},
-                                      {@"id ":@"1235",@"price":550,@"quantity":@2},
-                                      {@"id ":@"1236",@"price":550,@"quantity":@2}
+                                      @{@"id":@"1234",@"price":550,@"quantity":@1},
+                                      @{@"id":@"1235",@"price":550,@"quantity":@2},
+                                      @{@"id":@"1236",@"price":550,@"quantity":@2}
                                   ],
                                   @"din":@"2016-01-02",
                                   @"dout":@"2016-01-05",
