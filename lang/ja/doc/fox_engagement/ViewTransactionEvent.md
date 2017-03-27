@@ -18,7 +18,7 @@ JSONObject eventInfo = new JSONObject("{" +
                                       "'destination':'XXXXX'," +
                                       "'criteo_partner_id':'XXXXX'" +
                                       "}");
-AnalyticsManager.sendEvent(this, "_purchase", null, null, null, null, null, 2750, 1, "JPY",　eventInfo);
+AnalyticsManager.sendEvent(this, "_purchase", null, null, null, null, null, 2750, 1, "JPY", eventInfo);
 ```
 
 ### 引数詳細
