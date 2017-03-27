@@ -10,7 +10,7 @@
 								value:0　
 								eventInfo:@{
 									@"search_term":@"XXXXX",
-									@"product":@[{@"id": @"111", @"item_location_id":@"XXXXX"}],
+									@"product":@[@{@"id":@"111", @"item_location_id":@"XXXXX"}],
 									@"din":@"2016-01-02",
 									@"dout":@"2016-01-05",
 									@"origin":@"XXXXX",
