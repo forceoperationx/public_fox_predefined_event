@@ -10,7 +10,7 @@
                                 label: nil
                                 value: 0
                                 eventInfo:@{
-                                  @"product":@[{@"id": @"111"}],
+                                  @"product":@[@{@"id":@"111"}],
                                   @"din":@"2016-01-02",
                                   @"dout":@"2016-01-05",
                                   @"origin":@"XXXXX",
