@@ -12,9 +12,9 @@
                                   eventInfo:@{
                                     @"currency":@"JPY",
                                     @"product":@[
-                                      {@"id ":@"1234",@"price":@100,@"quantity":@1},
-                                      {@"id ":@"1235",@"price":@200,@"quantity":@2},
-                                      {@"id ":@"1236",@"price":@300,@"quantity":@3}
+                                      {@"id":@"1234",@"price":@100,@"quantity":@1},
+                                      {@"id":@"1235",@"price":@200,@"quantity":@2},
+                                      {@"id":@"1236",@"price":@300,@"quantity":@3}
                                     ],
                                     @"din":@"2016-01-02",
                                     @"dout":@"2016-01-05",
