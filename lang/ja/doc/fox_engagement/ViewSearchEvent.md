@@ -7,10 +7,10 @@
 JSONObject eventInfo = new JSONObject("{" +
                                  "'din':'2016-01-02'," +
                                  "'dout':'2016-01-05'," +
-                                 "'search_term':'XXXXX'" +
+                                 "'search_term':'XXXXX'," +
                                  "'origin':'XXXXX'," +
                                  "'destination':'XXXXX'," +
-                                 "'criteo_partner_id':'XXXXX'" +
+                                 "'criteo_partner_id':'XXXXX'," +
                                  "'product':[" +
                                         "{'id': '111'," +
                                         "'item_location_id':'XXXXX'}," +
@@ -18,7 +18,7 @@ JSONObject eventInfo = new JSONObject("{" +
                                          "'item_location_id':'XXXXX'}," +
                                         "{'id': '113'," +
                                          "'item_location_id':'XXXXX'}" +
-                                 	"]," +
+                                 	"]" +
                                 "}");
 AnalyticsManager.sendEvent(this, "_search", null, null, 0, eventInfo);
 ```
