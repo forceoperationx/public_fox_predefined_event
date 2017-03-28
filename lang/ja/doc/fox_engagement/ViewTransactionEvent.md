@@ -6,7 +6,7 @@ Track Transaction（商品購入）イベントが発生する箇所に、下記
 
 ```java
 JSONObject eventInfo = new JSONObject("{" +
-                                      "'transaction_id':'ABCDFE’," +
+                                      "'transaction_id':'ABCDFE'," +
                                       "'product':[" +
                                                 "{'id':'1234','price':550,'quantity':1}," +
                                                 "{'id':'1235','price':550,'quantity':2}," +
