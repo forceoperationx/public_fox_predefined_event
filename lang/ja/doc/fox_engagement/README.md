@@ -73,6 +73,9 @@ F.O.X SDKで対応している媒体のイベント計測は以下の6つとな�
 * [> View Product イベント](./ViewProductEvent.md)
 * [> View Basket イベント](./ViewBasketEvent.md)
 * [> Track Transaction イベント](./ViewTransactionEvent.md)
+* [> Achieved Level イベント](./ACHIEVED_LEVEL.md)
+* [> Member Regist イベント](./MEMBER_REGIST.md)
+* [> Tutorial Comp イベント](./TUTORIAL_COMP.md)
 
 
 
