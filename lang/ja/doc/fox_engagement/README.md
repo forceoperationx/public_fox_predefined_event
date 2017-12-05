@@ -65,7 +65,7 @@ Jsonの仕様は以下の通りです。
 
 　　　
 ## 2.イベント計測の実装
-F.O.X SDKで対応している媒体のイベント計測は以下の6つとなっています。
+F.O.X SDKで対応している媒体のイベント計測は以下の9つとなっています。
 
 * [> View Toppage イベント](./ViewToppageEvent.md)
 * [> View Search イベント](./ViewSearchEvent.md)
