@@ -4,15 +4,24 @@
 
 ### 実装例
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objective-c
-[ForceAnalyticsManager sendEvent:@"_member_regist"
-                                action: nil
-                                label: nil
-                                value: 0
-                                eventInfo:@{
-                                  @"registration_method":@"XXXXX"
-                                }
-];
+NSDictionary* eventInfo = @{
+  @"registration_method":@"XXXXX"
+};
+CYZFoxEvent* event = [[CYZFoxEvent alloc] initWithEventName:@"_member_regist"];
+event.eventInfo = eventInfo;
+[CYZFox trackEvent:event];
+```
+
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+let eventInfo: Dictionary = [
+  "registration_method":"XXXXX"
+]
+let event:CYZFoxEvent = CYZFoxEvent.init(eventName:"_member_regist")
+event.eventInfo = eventInfo
+CYZFox.trackEvent(event)
 ```
 
 ### 引数詳細
@@ -27,10 +36,9 @@
 
 #### イベント情報詳細
 
-| 引数 | 型 | 概要 |
+| 引数 | 型 | 概要 | 必須 |
 |:----------|:-----------:|:------------|
-|eventInfo (registration_method)|NSDictionary|Facebook,Twitter,EmailなどをJSONに設定する|
+|eventInfo (registration_method)|NSDictionary|Facebook,Twitter,EmailなどをJSONに設定する| × |
 
 ---
 [戻る](/lang/ja/doc/fox_engagement/README.md)
-

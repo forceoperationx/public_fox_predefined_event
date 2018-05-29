@@ -4,24 +4,45 @@
 
 ### 実装例
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objective-c
-[ForceAnalyticsManager sendEvent:@"_view_listing"
-                                action: nil
-                                label: nil
-                                value: 0
-                                eventInfo:@{
-                                  @"product":@[
-                                      @{@"id":@"111",@"category":@"映画、ビデオ>DVD>スポーツ、レジャー"},
-                                      @{@"id":@"112",@"category":@"映画、ビデオ>DVD>スポーツ、レジャー"},
-                                      @{@"id":@"113",@"category":@"映画、ビデオ>DVD>スポーツ、レジャー"}
-                                  ],
-                                  @"din":@"2016-01-02",
-                                  @"dout":@"2016-01-05",
-                                  @"origin":@"XXXXX",
-                                  @"destination":@"XXXXX",
-                                  @"criteo_partner_id":@"XXXXX"
-                                }
-];
+NSDictionary* eventInfo = {
+  @"currency":@"JPY",
+  @"product":@[
+    @{@"id":@"111",@"category":@"映画、ビデオ>DVD>スポーツ、レジャー"},
+    @{@"id":@"112",@"category":@"映画、ビデオ>DVD>スポーツ、レジャー"},
+    @{@"id":@"113",@"category":@"映画、ビデオ>DVD>スポーツ、レジャー"}
+  ],
+  @"din":@"2016-01-02",
+  @"dout":@"2016-01-05",
+  @"origin":@"XXXXX",
+  @"destination":@"XXXXX",
+  @"criteo_partner_id":@"XXXXX"
+};
+
+CYZFoxEvent* event = [[CYZFoxEvent alloc] initWithEventName:@"_view_listing"];
+event.eventInfo = eventInfo;
+[CYZFox trackEvent:event];
+```
+
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+let eventInfo: Dictionary = [
+  "currency": "JPY",
+  "din": "2018-05-01",
+  "dout": "2018-05-30",
+  "origin": "XXXX",
+  "destination": "XXXX",
+  "criteo_partner_id": "XXXXX",
+  "product":[
+    ["id":"1234", "category": "映画、ビデオ>DVD>スポーツ、レジャー"],
+    ["id":"1235", "category": "映画、ビデオ>DVD>スポーツ、レジャー"],
+    ["id":"1236", "category": "映画、ビデオ>DVD>スポーツ、レジャー"]
+  ]
+]
+let event:CYZFoxEvent = CYZFoxEvent.init(eventName:"_view_listing")
+event.eventInfo = eventInfo
+CYZFox.trackEvent(event)
 ```
 
 ### 引数詳細

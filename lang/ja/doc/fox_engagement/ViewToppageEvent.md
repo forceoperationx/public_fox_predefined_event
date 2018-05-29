@@ -3,20 +3,36 @@
 
 ### 実装例
 
+
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objective-c
-[ForceAnalyticsManager sendEvent:@"_view_toppage"
-								action:nil
-								label:nil
-								value:0　
-								eventInfo:@{
-									@"din":@"2016-01-02",
-									@"dout":@"2016-01-05",
-									@"origin":@"XXXXX",
-									@"destination":@"XXXXX",
-									@"criteo_partner_id":@"XXXXX"
-								}
-];
+NSDictionary* eventInfo = {
+  @"din":@"2016-01-02",
+  @"dout":@"2016-01-05",
+  @"origin":@"XXXXX",
+  @"destination":@"XXXXX",
+  @"criteo_partner_id":@"XXXXX"
+};
+
+CYZFoxEvent* event = [[CYZFoxEvent alloc] initWithEventName:@"_view_toppage"];
+event.eventInfo = eventInfo;
+[CYZFox trackEvent:event];
 ```
+
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+let eventInfo: Dictionary = [
+  "din": "2018-05-01",
+  "dout": "2018-05-30",
+  "origin": "XXXX",
+  "destination": "XXXX",
+  "criteo_partner_id": "XXXXX"
+]
+let event:CYZFoxEvent = CYZFoxEvent.init(eventName:"_view_toppage")
+event.eventInfo = eventInfo
+CYZFox.trackEvent(event)
+```
+
 
 ### 引数詳細
 
@@ -39,4 +55,3 @@
 
 ---
 [戻る](/lang/ja/doc/fox_engagement/README.md)
-

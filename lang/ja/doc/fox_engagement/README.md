@@ -2,7 +2,7 @@
 ## 1. 概要
 本ドキュメントでは、Force Operation X SDK(以下F.O.X)における各媒体とのアクセス解析イベントの連携を行う際に必要となる実装を説明します。
 
-* **対応F.O.X iOS SDKバージョン** : `v2.16g`以上
+* **対応F.O.X iOS SDKバージョン** : `v4`以上
 
 ### 1.1.	SDK仕様
 F.O.X SDKアクセス解析機能を利用することにより媒体を横断したイベント計測連携を行います。計測は内容に応じて各種メソッドを実行することで行います。
@@ -10,25 +10,35 @@ F.O.X SDKアクセス解析機能を利用することにより媒体を横断�
 #### イベント情報の送信
 
 ヘッダファイル AnalyticsManager.hをインポートします。
+
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objective-c
- #import "AnalyticsManager.h"
+ #import <CYZFox/CYZFox.h>
 ```
 
-次のsendEventメソッドを利用し、イベント情報を送信します。
-```objective-c
-+ (void)sendEvent:(NSString*)eventName
-           action:(NSString*)action
-            label:(NSString*)label
-          orderID:(NSString*)orderID
-              sku:(NSString*)sku
-         itemName:(NSString*)itemName
-            price:(double)price
-         quantity:(NSUInteger)quantity
-         currency:(NSString*)currency;
-         eventInfo:(NSDictionary*)eventInfo;
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+ import CYZFox
 ```
 
-### sendEventメソッド 引数
+
+次のtrackEventメソッドを利用し、下記使用可能引数を格納したイベント情報を送信します。
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
+```objective-c
++ (void)trackEvent:メソッド
+          eventName:(NSString*)eventName
+          action:(NSString*)action
+          label:(NSString*)label
+          orderId:(NSString*)orderId
+          sku:(NSString*)sku
+          itemName:(NSString*)itemName
+          price:(double)price
+          quantity:(NSUInteger)quantity
+          currency:(NSString*)currency;
+          eventInfo:(NSDictionary*)eventInfo;
+```
+
+### trackEventメソッド引数一覧
 
 引数それぞれのパラメータの仕様は以下の通りです。
 
@@ -76,7 +86,3 @@ F.O.X SDKで対応している媒体のイベント計測は以下の9つとな�
 * [> Achieved Level イベント](./ACHIEVED_LEVEL.md)
 * [> Member Regist イベント](./MEMBER_REGIST.md)
 * [> Tutorial Comp イベント](./TUTORIAL_COMP.md)
-
-
-
-

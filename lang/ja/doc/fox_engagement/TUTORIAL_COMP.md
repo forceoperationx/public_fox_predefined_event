@@ -4,15 +4,24 @@
 
 ### 実装例
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objective-c
-[ForceAnalyticsManager sendEvent:@"_tutorial_comp"
-                                action: nil
-                                label: nil
-                                value: 0
-                                eventInfo:@{
-                                  @"product":@[@{@"id":@"XXXX"}]
-                                }
-];
+NSDictionary* eventInfo = @{
+  @"product":@[@{@"id":@"XXXX"}]
+};
+CYZFoxEvent* event = [[CYZFoxEvent alloc] initWithEventName:@"_tutorial_comp"];
+event.eventInfo = eventInfo;
+[CYZFox trackEvent:event];
+```
+
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+let eventInfo: Dictionary = [
+  "product":[["id":"XXXX"]]
+]
+let event:CYZFoxEvent = CYZFoxEvent.init(eventName:"_tutorial_comp")
+event.eventInfo = eventInfo
+CYZFox.trackEvent(event)
 ```
 
 ### 引数詳細
@@ -34,4 +43,3 @@
 
 ---
 [戻る](/lang/ja/doc/fox_engagement/README.md)
-

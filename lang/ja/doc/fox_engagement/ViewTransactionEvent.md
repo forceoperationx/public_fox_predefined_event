@@ -4,30 +4,56 @@ Track Transaction（商品購入）イベントが発生する箇所に、下記
 
 ### 実装例
 
+
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objective-c
-[ForceAnalyticsManager sendEvent:@"_purchase"
-                              action:nil
-                              label:nil
-                              orderID:nil
-                              sku:nil
-                              itemName:nil
-                              price:2750
-                              quantity:1
-                              currency: @"JPY"
-                              eventInfo: @{
-                                  @"transaction_id":@"ABC",
-                                  @"product":@[
-                                      @{@"id":@"1234",@"price":550,@"quantity":@1},
-                                      @{@"id":@"1235",@"price":550,@"quantity":@2},
-                                      @{@"id":@"1236",@"price":550,@"quantity":@2}
-                                  ],
-                                  @"din":@"2016-01-02",
-                                  @"dout":@"2016-01-05",
-                                  @"origin":@"XXXXX",
-                                  @"destination":@"XXXXX",
-                                  @"criteo_partner_id":@"XXXXX"
-                              }
-];
+NSDictionary* eventInfo = {
+  @"transaction_id": @"ABC",
+  @"product":@[
+    {@"id":@"1234",@"price":@100,@"quantity":@1},
+    {@"id":@"1235",@"price":@200,@"quantity":@2},
+    {@"id":@"1236",@"price":@300,@"quantity":@3}
+  ],
+  @"din":@"2016-01-02",
+  @"dout":@"2016-01-05",
+  @"origin":@"XXXXX",
+  @"destination":@"XXXXX",
+  @"criteo_partner_id":@"XXXXX"
+};
+
+CYZFoxEvent* event = [[CYZFoxEvent alloc] initWithEventName:@"_purchase"];
+event.eventInfo = eventInfo;
+event.currency = @"JPY";
+event.price = 2750;
+event.quantity = 1;
+event.sku = @"ABC789";
+event.orderId = @"ABCDFE";
+[CYZFox trackEvent:event];
+```
+
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+let eventInfo: Dictionary = [
+  "transaction_id": "ABC",
+  "din": "2018-05-01",
+  "dout": "2018-05-30",
+  "origin": "XXXX",
+  "destination": "XXXX",
+  "criteo_partner_id": "XXXXX",
+  "product":[
+    ["id":"1234", "price": 100, "quantity": 1],
+    ["id":"1235", "price": 200, "quantity": 2],
+    ["id":"1236", "price": 300, "quantity": 3]
+  ]
+]
+let event:CYZFoxEvent = CYZFoxEvent.init(eventName:"_purchase")
+event.eventInfo = eventInfo
+event.currency = "JPY"
+event.price = 2750
+event.quantity = 1
+event.sku = "ABC789"
+event.orderId = "ABCDFE"
+CYZFox.trackEvent(event)
 ```
 
 ### 引数詳細

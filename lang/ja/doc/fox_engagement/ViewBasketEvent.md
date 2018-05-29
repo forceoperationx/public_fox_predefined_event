@@ -4,25 +4,45 @@
 
 ### 実装例
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objective-c
-[ForceAnalyticsManager sendEvent:@"_add_to_cart"
-                                  action: nil
-                                  label: nil
-                                  value: 0
-                                  eventInfo:@{
-                                    @"currency":@"JPY",
-                                    @"product":@[
-                                      {@"id":@"1234",@"price":@100,@"quantity":@1},
-                                      {@"id":@"1235",@"price":@200,@"quantity":@2},
-                                      {@"id":@"1236",@"price":@300,@"quantity":@3}
-                                    ],
-                                    @"din":@"2016-01-02",
-                                    @"dout":@"2016-01-05",
-                                    @"origin":@"XXXXX",
-                                    @"destination":@"XXXXX",
-                                    @"criteo_partner_id":@"XXXXX"
-                       }
-];
+NSDictionary* eventInfo = {
+  @"currency":@"JPY",
+  @"product":@[
+    {@"id":@"1234",@"price":@100,@"quantity":@1},
+    {@"id":@"1235",@"price":@200,@"quantity":@2},
+    {@"id":@"1236",@"price":@300,@"quantity":@3}
+  ],
+  @"din":@"2016-01-02",
+  @"dout":@"2016-01-05",
+  @"origin":@"XXXXX",
+  @"destination":@"XXXXX",
+  @"criteo_partner_id":@"XXXXX"
+};
+
+CYZFoxEvent* event = [[CYZFoxEvent alloc] initWithEventName:@"_add_to_cart"];
+event.eventInfo = eventInfo;
+[CYZFox trackEvent:event];
+```
+
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+let eventInfo: Dictionary = [
+  "currency": "JPY",
+  "din": "2018-05-01",
+  "dout": "2018-05-30",
+  "origin": "XXXX",
+  "destination": "XXXX",
+  "criteo_partner_id": "XXXXX",
+  "product":[
+    ["id":"1234", "price": 100, "quantity": 1],
+    ["id":"1235", "price": 200, "quantity": 2],
+    ["id":"1236", "price": 300, "quantity": 3]
+  ]
+]
+let event:CYZFoxEvent = CYZFoxEvent.init(eventName:"_add_to_cart")
+event.eventInfo = eventInfo
+CYZFox.trackEvent(event)
 ```
 
 ### 引数詳細

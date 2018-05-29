@@ -4,15 +4,24 @@
 
 ### 実装例
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objective-c
-[ForceAnalyticsManager sendEvent:@"_achieved_level"
-                                action: nil
-                                label: nil
-                                value: 0
-                                eventInfo:@{
-                                  @"track_info":@[@{@"main_level":@"XX"}]
-                                }
-];
+NSDictionary* eventInfo = @{
+  @"track_info":@[@{@"main_level":@"XX"}]
+};
+CYZFoxEvent* event = [[CYZFoxEvent alloc] initWithEventName:@"_achieved_level"];
+event.eventInfo = eventInfo;
+[CYZFox trackEvent:event];
+```
+
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+let eventInfo: Dictionary = [
+  "track_info":[["main_level":"XX"]]
+]
+let event:CYZFoxEvent = CYZFoxEvent.init(eventName:"_achieved_level")
+event.eventInfo = eventInfo
+CYZFox.trackEvent(event)
 ```
 
 ### 引数詳細
@@ -20,18 +29,14 @@
 | 引数 | 型 | 概要 |
 |:----------|:-----------:|:------------|
 |eventName|NSString|"\_achieved\_level" を指定してください。|
-|<span style="color:grey">action|<span style="color:grey">NSString|<span style="color:grey">使用しません。|
-|<span style="color:grey">label|<span style="color:grey">NSString|<span style="color:grey">使用しません。|
-|<span style="color:grey">value|<span style="color:grey">NSUInteger|<span style="color:grey">使用しません。|
 |eventInfo|NSDictionary|イベント情報詳細 (以下参照)|
 
 #### イベント情報詳細
 
-| 引数 | 型 | 概要 |
-|:----------|:-----------:|:------------|
-|eventInfo (track_info)|NSDictionary|レベル情報を配列で入力
-|&nbsp;&nbsp;eventInfo (track_info[].main_level)|NSDictionary|到達レベルを入力|
+| 引数 | 型 | 概要 | 必須 |
+|:----------|:-----------:|:------------|:------------|
+|eventInfo (track_info)|NSDictionary|レベル情報を配列で入力| ○ |
+|&nbsp;&nbsp;eventInfo (track_info[].main_level)|NSDictionary|到達レベルを入力| ○ |
 
 ---
 [戻る](/lang/ja/doc/fox_engagement/README.md)
-

@@ -4,17 +4,23 @@
 
 ### 実装例
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objective-c
 NSDictionary *ext = @{@"XXXXX":@"XXXXX", @"XXX":@XXX};
 NSDictionary *userInfo = @{@"guid":@"XXXXX", @"ext":ext};
-[ForceAnalyticsManager setUserInfo:userInfo];
 
-[ForceAnalyticsManager sendEvent:@"_update_userinfo"
-                                action:nil
-                                label:nil
-                                value:0
-                                eventInfo:nil
-];
+CYZFoxEvent* event = [[CYZFoxEvent alloc] initWithEventName:@"_update_userinfo"];
+event.userInfo = userInfo;
+[CYZFox trackEvent:event];
+```
+
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+let ext: Dictionary = ["XXXX":"XXXX", "XXX":XXX]
+let userInfo: Dictionary = ["guid": "XXXX", "ext": ext]
+let event:CYZFoxEvent = CYZFoxEvent.init(eventName:"_update_userinfo")
+event.userInfo = userInfo
+CYZFox.trackEvent(event)
 ```
 
 ### 引数詳細
