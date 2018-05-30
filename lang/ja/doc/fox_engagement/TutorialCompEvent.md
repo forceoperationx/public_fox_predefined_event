@@ -4,11 +4,14 @@
 
 ### 実装例
 
+[![Language](https://img.shields.io/badge/language-Java-red.svg)]()
 ```java
 JSONObject eventInfo = new JSONObject("{" +
-                                 "'product':[{'id': 'XXXXX'}]" +
-                                 "}");
-AnalyticsManager.sendEvent(this, "_tutorial_comp", null, null, 0, eventInfo);
+  "'product':[{'id': 'XXXXX'}]" +
+"}");
+FoxEvent foxEvent = new FoxEvent("_tutorial_comp", "LTVID");
+foxEvent.eventInfo = eventInfo;
+Fox.trackEvent(foxEvent);
 ```
 
 ### 引数詳細

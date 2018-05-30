@@ -3,6 +3,7 @@
 
 ### 実装例
 
+[![Language](https://img.shields.io/badge/language-Java-red.svg)]()
 ```java
 JSONObject eventInfo = new JSONObject("{" +
                                  "'din':'2016-01-02'," +
@@ -11,7 +12,9 @@ JSONObject eventInfo = new JSONObject("{" +
                                  "'destination':'XXXXX'," +
                                  "'criteo_partner_id':'XXXXX'" +
                                  "}");
-AnalyticsManager.sendEvent(this, "_view_toppage", null, null, 0, eventInfo);
+FoxEvent foxEvent = new FoxEvent("_view_toppage", "LTVID");
+foxEvent.eventInfo = eventInfo;
+Fox.trackEvent(foxEvent);
 ```
 
 ### 引数詳細

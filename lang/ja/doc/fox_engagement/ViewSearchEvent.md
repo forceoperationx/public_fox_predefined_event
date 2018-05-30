@@ -3,24 +3,20 @@
 
 ### 実装例
 
+[![Language](https://img.shields.io/badge/language-Java-red.svg)]()
 ```java
 JSONObject eventInfo = new JSONObject("{" +
+                                 "'product':[{'id': '111'}]," +
                                  "'din':'2016-01-02'," +
                                  "'dout':'2016-01-05'," +
-                                 "'search_term':'XXXXX'," +
                                  "'origin':'XXXXX'," +
                                  "'destination':'XXXXX'," +
-                                 "'criteo_partner_id':'XXXXX'," +
-                                 "'product':[" +
-                                        "{'id': '111'," +
-                                        "'item_location_id':'XXXXX'}," +
-                                        "{'id': '112'," +
-                                         "'item_location_id':'XXXXX'}," +
-                                        "{'id': '113'," +
-                                         "'item_location_id':'XXXXX'}" +
-                                 	"]" +
-                                "}");
-AnalyticsManager.sendEvent(this, "_search", null, null, 0, eventInfo);
+                                 "'criteo_partner_id':'XXXXX'" +
+                                 "}");
+
+FoxEvent foxEvent = new FoxEvent("_search", "LTVID");
+foxEvent.eventInfo = eventInfo;
+Fox.trackEvent(foxEvent);
 ```
 
 ### 引数詳細

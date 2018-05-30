@@ -4,6 +4,7 @@
 
 ### 実装例
 
+[![Language](https://img.shields.io/badge/language-Java-red.svg)]()
 ```java
 JSONObject eventInfo = new JSONObject("{" +
                                  "'currency':'JPY'," +
@@ -18,7 +19,9 @@ JSONObject eventInfo = new JSONObject("{" +
                                  "'destination':'XXXXX'," +
                                  "'criteo_partner_id':'XXXXX'" +
                                  "}");
-AnalyticsManager.sendEvent(this, "_add_to_cart", null, null, 0, eventInfo);
+FoxEvent foxEvent = new FoxEvent("_add_to_cart", "LTVID");
+foxEvent.eventInfo = eventInfo;
+Fox.trackEvent(foxEvent);
 ```
 
 ### 引数詳細
@@ -37,7 +40,7 @@ AnalyticsManager.sendEvent(this, "_add_to_cart", null, null, 0, eventInfo);
 
 | 引数 | 型 | 概要 |
 |:----------|:-----------:|:------------|
-|eventInfo (currency)|JSONObject|通貨<br>Nil/Nullの場合、デフォルト “JPY”|
+|eventInfo (currency)|JSONObject|通貨<br>Nullの場合、デフォルト “JPY”|
 |eventInfo (product)|JSONArray|Product をキーとして商品IDを配列で設定します。
 |&nbsp;&nbsp;eventInfo (product[].id)|JSONObject|商品ID<br>データフィードと同じ商品IDを使用してください。|
 |&nbsp;&nbsp;eventInfo (product[].price)|JSONObject|該当商品の価格を設定します。|

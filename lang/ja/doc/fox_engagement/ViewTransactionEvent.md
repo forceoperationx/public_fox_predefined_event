@@ -4,9 +4,10 @@ Track Transaction（商品購入）イベントが発生する箇所に、下記
 
 ### 実装例
 
+[![Language](https://img.shields.io/badge/language-Java-red.svg)]()
 ```java
 JSONObject eventInfo = new JSONObject("{" +
-                                      "'transaction_id':'ABCDFE'," +
+                                      "'transaction_id':'ABCDFE’," +
                                       "'product':[" +
                                                 "{'id':'1234','price':550,'quantity':1}," +
                                                 "{'id':'1235','price':550,'quantity':2}," +
@@ -18,7 +19,14 @@ JSONObject eventInfo = new JSONObject("{" +
                                       "'destination':'XXXXX'," +
                                       "'criteo_partner_id':'XXXXX'" +
                                       "}");
-AnalyticsManager.sendEvent(this, "_purchase", null, null, null, null, null, 2750, 1, "JPY", eventInfo);
+FoxEvent foxEvent = new FoxEvent("_purchase", "LTVID");
+foxEvent.eventInfo = eventInfo;
+foxEvent.price = 2750;
+foxEvent.currency = "JPY";
+foxEvent.quantity = 1;
+foxEvent.sku = "ABC789";
+foxEvent.orderId = "ABCDFE";
+Fox.trackEvent(foxEvent);
 ```
 
 ### 引数詳細

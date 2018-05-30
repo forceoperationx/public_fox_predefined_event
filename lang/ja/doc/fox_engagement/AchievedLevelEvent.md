@@ -4,11 +4,14 @@
 
 ### 実装例
 
+[![Language](https://img.shields.io/badge/language-Java-red.svg)]()
 ```java
 JSONObject eventInfo = new JSONObject("{" +
-                                 "'track_info':[{'main_level': '111'}]" +
-                                 "}");
-AnalyticsManager.sendEvent(this, "_achieved_level", null, null, 0, eventInfo);
+  "'track_info':[{'main_level': '111'}]" +
+"}");
+FoxEvent foxEvent = new FoxEvent("_achieved_level", "LTVID");
+foxEvent.eventInfo = eventInfo;
+Fox.trackEvent(foxEvent);
 ```
 
 ### 引数詳細

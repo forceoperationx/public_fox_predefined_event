@@ -3,34 +3,32 @@
 ## 1. 概要
 　本ドキュメントでは、Force Operation X SDK(以下F.O.X)における各媒体とのアクセス解析イベントの連携を行う際に必要となる実装を説明します。
 
-* **対応F.O.X Android SDKバージョン** : `v2.16g`以上
+* **対応F.O.X Android SDKバージョン** : `v4`以上
 
 ### 1.1.	SDK仕様
 　F.O.X SDKアクセス解析機能を利用することにより媒体を横断したイベント計測連携を行います。計測は内容に応じて各種メソッドを実行することで行います。
 
 #### イベント情報の送信
 
-AnalyticsManagerクラスをインポートします。
+FoxTrack及びFoxEventクラスをインポートします。
+
+[![Language](https://img.shields.io/badge/language-Java-blue.svg)]()
 ```java
-import jp.appAdForce.android.AnalyticsManager;
+import co.cyberz.fox.FoxTrack;
+import co.cyberz.fox.service.FoxEvent;
 ```
 
-次のsendEventメソッドを利用し、イベント情報を送信します。
+次のtrackEventメソッドを利用し、イベント情報を送信します。
+
+[![Language](https://img.shields.io/badge/language-Java-blue.svg)]()
 ```java
-public static void sendEvent(Context context,
-							 String eventName,
-							 String action,
-							 String label,
-							 String orderId,
-							 String sku,
-							 String itemName,
-							 double price,
-							 int quantity,
-							 String currency,
-							 JSONObject eventInfo);
+FoxEvent event = new FoxEvent("eventName", "LTVID");
+event.eventInfo = eventInfo;
+Fox.trackEvent(event);
+
 ```
 
-### sendEventメソッド 引数
+### FoxEventクラスの引数一覧
 
 引数それぞれのパラメータの仕様は以下の通りです。
 

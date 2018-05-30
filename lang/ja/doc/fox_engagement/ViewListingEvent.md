@@ -4,6 +4,7 @@
 
 ### 実装例
 
+[![Language](https://img.shields.io/badge/language-Java-red.svg)]()
 ```java
 JSONObject eventInfo = new JSONObject("{" +
                                  "'product':[" +
@@ -20,7 +21,10 @@ JSONObject eventInfo = new JSONObject("{" +
                                  "'destination':'XXXXX'," +
                                  "'criteo_partner_id':'XXXXX'" +
                                  "}");
-AnalyticsManager.sendEvent(this, "_view_listing", null, null, 0, eventInfo);
+
+FoxEvent foxEvent = new FoxEvent("_view_listing", "LTVID");
+foxEvent.eventInfo = eventInfo;
+Fox.trackEvent(foxEvent);
 ```
 
 ### 引数詳細
