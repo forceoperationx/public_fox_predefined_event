@@ -7,7 +7,8 @@
 ![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objective-c
 NSDictionary* eventInfo = @{
-  @"product":@[@{@"id":@"XXXX"}]
+  @"product":@[@{@"id":@"XXXX"}],
+  @"track_info":@[@{@"main_level":@"XXXX"}]
 };
 CYZFoxEvent* event = [[CYZFoxEvent alloc] initWithEventName:@"_tutorial_comp"];
 event.eventInfo = eventInfo;
@@ -17,7 +18,7 @@ event.eventInfo = eventInfo;
 ![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
 ```Swift
 let eventInfo: Dictionary = [
-  "product":[["id":"XXXX"]]
+  "product":[["id":"XXXX"]], "track_info": [["main_level": "levelID"]]
 ]
 let event:CYZFoxEvent = CYZFoxEvent.init(eventName:"_tutorial_comp")
 event.eventInfo = eventInfo
@@ -40,6 +41,7 @@ CYZFox.trackEvent(event)
 |:----------|:-----------:|:------------|
 |eventInfo (product)|NSDictionary|Product をキーとして商品IDを配列で設定します。
 |&nbsp;&nbsp;eventInfo (product[].id)|NSDictionary|閲覧した商品IDを設定します。|
+|&nbsp;&nbsp;eventInfo (track_info[].main_level)|NSDictionary|レベルIDを設定します。|
 
 ---
 [戻る](/lang/ja/doc/fox_engagement/README.md)
