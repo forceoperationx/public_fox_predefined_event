@@ -41,6 +41,7 @@ CYZFox.trackEvent(event)
 |:----------|:-----------:|:------------|
 |eventInfo (product)|NSDictionary|Product をキーとして商品IDを配列で設定します。
 |&nbsp;&nbsp;eventInfo (product[].id)|NSDictionary|閲覧した商品IDを設定します。|
+|eventInfo (track_info)|NSDictionary|レベルIDを配列で指定します。
 |&nbsp;&nbsp;eventInfo (track_info[].main_level)|NSDictionary|レベルIDを設定します。|
 
 ---
