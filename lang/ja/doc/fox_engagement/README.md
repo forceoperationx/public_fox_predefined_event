@@ -69,7 +69,7 @@ Jsonの仕様は以下の通りです。
 |&nbsp;&nbsp;product[].quantity|int|閲覧した、カートに入れた等の商品数量を設定します。|
 |&nbsp;&nbsp;product[].category|String|閲覧した、カートに入れた等の商品カテゴリを指定します。<br>複数ある場合はカンマ「,」区切り、階層がある場合は「>」で分割します。<br>例）映画、ビデオ>DVD>スポーツ、レジャー|
 |track_info|Array|レベル関連情報を設定します。|
-|&nbsp;&nbsp;product[].main_level|String|レベルIDを設定します。|
+|&nbsp;&nbsp;track_info[].main_level|String|レベルIDを設定します。|
 |din|String|開始日の指定がある場合に設定します。|
 |dout|String|終了日の指定がある場合に指定します。|
 |origin|String|出発地点指定がある場合に設定します。|
