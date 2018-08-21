@@ -10,9 +10,9 @@ Track Transaction（商品購入）イベントが発生する箇所に、下記
 NSDictionary* eventInfo = {
   @"transaction_id": @"ABC",
   @"product":@[
-    {@"id":@"1234",@"price":@100,@"quantity":@1},
-    {@"id":@"1235",@"price":@200,@"quantity":@2},
-    {@"id":@"1236",@"price":@300,@"quantity":@3}
+    {@"id":@"1234",@"price":@100,@"quantity":@1, @"currency": @"JPY", @"category": @"display"},
+    {@"id":@"1235",@"price":@200,@"quantity":@2, @"currency": @"THB", @"category": @"av"},
+    {@"id":@"1236",@"price":@300,@"quantity":@3, @"currency": @"USD", @"category": @"car"}
   ],
   @"din":@"2016-01-02",
   @"dout":@"2016-01-05",
@@ -41,9 +41,9 @@ let eventInfo: Dictionary = [
   "destination": "XXXX",
   "criteo_partner_id": "XXXXX",
   "product":[
-    ["id":"1234", "price": 100, "quantity": 1],
-    ["id":"1235", "price": 200, "quantity": 2],
-    ["id":"1236", "price": 300, "quantity": 3]
+    ["id":"1234", "price": 100, "quantity": 1, "currency": "JPY", "category":"display"],
+    ["id":"1235", "price": 200, "quantity": 2, "currency": "THB", "category":"av"],
+    ["id":"1236", "price": 300, "quantity": 3, "currency": "USD", "category":"car"]
   ]
 ]
 let event:CYZFoxEvent = CYZFoxEvent.init(eventName:"_purchase")
@@ -80,6 +80,8 @@ CYZFox.trackEvent(event)
 |&nbsp;&nbsp;eventInfo (product[].id)|NSDictionary|商品IDデータフィードと同じ商品IDを使用してください。|
 |&nbsp;&nbsp;eventInfo (product[].price)|NSDictionary|該当商品の価格を設定します。|
 |&nbsp;&nbsp;eventInfo (product[].quantity)|NSDictionary|該当商品を買った個数を設定します。|
+|&nbsp;&nbsp;eventInfo (product[].currency)|NSDictionary|通貨コードを設定します。|
+|&nbsp;&nbsp;eventInfo (product[].category)|NSDictionary|カテゴリIDを設定します。|
 |eventInfo (din/dout)|NSDictionary|⽇付の指定がある場合は⼊⼒してください。（任意）|
 |eventInfo (origin/destination)|NSDictionary|出発地点／行先の指定がある場合は入力（旅行アプリなど）（任意）|
 |eventInfo (criteo_partner_id)|NSDictionary|Criteo アカウントID が同⼀アプリで異なる場合は⼊⼒(任意)<br>
