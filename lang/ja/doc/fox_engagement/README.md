@@ -65,13 +65,19 @@ Jsonの仕様は以下の通りです。
 |product|Array|閲覧した、カートに入れた等の商品の設定領域です。|
 |&nbsp;&nbsp;product[].id|String|閲覧した、カートに入れた等の商品IDを設定します。|
 |&nbsp;&nbsp;product[].price|double|閲覧した、カートに入れた等の商品単価を設定します。|
+|&nbsp;&nbsp;product[].currency|String|通貨コードを設定します。|
 |&nbsp;&nbsp;product[].quantity|int|閲覧した、カートに入れた等の商品数量を設定します。|
 |&nbsp;&nbsp;product[].category|String|閲覧した、カートに入れた等の商品カテゴリを指定します。<br>複数ある場合はカンマ「,」区切り、階層がある場合は「>」で分割します。<br>例）映画、ビデオ>DVD>スポーツ、レジャー|
+|track_info|Array|レベル関連情報を設定します。|
+|&nbsp;&nbsp;product[].main_level|String|レベルIDを設定します。|
 |din|String|開始日の指定がある場合に設定します。|
 |dout|String|終了日の指定がある場合に指定します。|
 |origin|String|出発地点指定がある場合に設定します。|
 |destination|String|行先の指定がある場合に指定します。|
+|search_term|String|検索キーワードを設定します。|
+|destination|String|行先の指定がある場合に指定します。|
 |criteo_partner_id|String|CriteoアカウントIDが同一アプリで異なる場合に設定します。|
+|data|String|任意の文字列を設定します。|
 
 　　　
 ## 2.イベント計測の実装
