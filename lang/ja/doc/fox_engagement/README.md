@@ -75,7 +75,6 @@ Jsonの仕様は以下の通りです。
 |origin|String|出発地点指定がある場合に設定します。|
 |destination|String|行先の指定がある場合に指定します。|
 |search_term|String|検索キーワードを設定します。|
-|destination|String|行先の指定がある場合に指定します。|
 |criteo_partner_id|String|CriteoアカウントIDが同一アプリで異なる場合に設定します。|
 |data|String|任意の文字列を設定します。|
 
